@@ -1,3 +1,4 @@
+<?php include 'proses/koneksi.php'; ?>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/"
@@ -88,19 +89,19 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item ">
-                        <a href="index.html" class="menu-link">
+                        <a href="index.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item active">
-                        <a href="pencarian.html" class="menu-link">
+                        <a href="pencarian.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-search"></i>
                             <div data-i18n="Analytics">Cari Pesanan</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="riwayat.html" class="menu-link">
+                        <a href="riwayat.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-history"></i>
                             <div data-i18n="Analytics">Riwayat</div>
                         </a>
@@ -118,82 +119,7 @@
             <div class="layout-page">
 
                 <!-- NAVBAR -->
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-                    id="layout-navbar">
-                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                            <i class="bx bx-menu bx-sm"></i>
-                        </a>
-                    </div>
-
-                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-
-                        <!-- LOGO  -->
-                        <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                            data-bs-toggle="dropdown">
-                            <div class="avatar">
-                                <img src="images/logo.png" style="aspect-ratio:1/1; object-fit:cover;" alt
-                                    class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                        </a>
-                        <!-- LOGO  -->
-
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-
-                            <!-- User -->
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="images/muhammad_khollis.jpeg"
-                                            style="aspect-ratio:1/1; object-fit:cover;" alt
-                                            class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar avatar-online">
-                                                        <img src="images/muhammad_khollis.jpeg"
-                                                            style="aspect-ratio:1/1; object-fit:cover;" alt
-                                                            class="w-px-40 h-auto rounded-circle" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">Muhammad Kholis</span>
-                                                    <small class="text-muted">User</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-user me-2"></i>
-                                            <span class="align-middle">My Profile</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-power-off me-2"></i>
-                                            <span class="align-middle">Log Out</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!--/ User -->
-                        </ul>
-                    </div>
-                </nav>
+                <?php include 'navbar.php'; ?>
                 <!-- NAVBAR -->
 
                 <!-- CONTENT -->
