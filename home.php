@@ -50,6 +50,8 @@
 
 <body>
 
+
+
     <!-- ISI HALAMAN -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
@@ -183,14 +185,14 @@
                             <!-- TITLE LAYANAN -->
 
                             <!-- LAYANAN -->
-                            <div class="col-lg-12 col-md-4 order-1">
+                            <div class="col-lg-12 col-md-4 col-12 order-1">
                                 <div class="row">
                                     <?php
                                     $qlayanan = mysqli_query($conn, "SELECT * FROM product");
                                     while ($row1 = mysqli_fetch_array($qlayanan)) { ?>
                                         <!-- ITEM LAYANAN -->
                                         <div class="col-md-4 col-6">
-                                            <a href="#" class="card-link">
+                                            <a href="product-detail.php?<?php echo $row1['id_product'] ?>" class="card-link">
                                                 <div class="card mb-3">
                                                     <div class="row g-0">
                                                         <div class="col-md-4">
@@ -246,25 +248,28 @@
 
 
                             <!-- LAYANAN -->
-                            <div class="col-lg-12 col-md-4 order-1">
+                            <div class="col-lg-12 col-md-4 col-12 order-1">
                                 <div class="row">
-
 
                                     <?php
                                     $qlayanan2 = mysqli_query($conn, "SELECT * FROM product");
                                     while ($row2 = mysqli_fetch_array($qlayanan2)) {
                                         ?>
                                         <!-- ITEM LAYANAN -->
-                                        <div class="col-md-6 col-xl-2 col-6">
-                                            <a href="#" class="card-link">
+                                        <div class="col-md-3 col-xl-2 col-6">
+                                            <a href="product-detail.php?<?php echo $row2['id_product'] ?>" class="card-link">
                                                 <div class="card mb-3">
                                                     <img class="card-img-top"
                                                         src="images/product-images/<?php echo $row2['gambar'] ?>"
                                                         alt="Card image cap" style="width: 100%; height: 100%;">
                                                     <div class="card-body">
                                                         <div class="text-center">
-                                                            <h5 class="card-title"> <?php echo $row2['nama_product'] ?></h5>
-                                                            <p class="card-text"><small class="text-muted"> <?php echo $row2['tipe'] ?></small></p>
+                                                            <h5 class="card-title">
+                                                                <?php echo $row2['nama_product'] ?>
+                                                            </h5>
+                                                            <p class="card-text"><small class="text-muted">
+                                                                    <?php echo $row2['tipe'] ?>
+                                                                </small></p>
                                                         </div>
                                                     </div>
                                                 </div>
