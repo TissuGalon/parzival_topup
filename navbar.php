@@ -44,7 +44,9 @@
                                         </div>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <span class="fw-semibold d-block"><?php echo $_SESSION['username'] ?></span>
+                                        <span class="fw-semibold d-block">
+                                            <?php echo $_SESSION['username'] ?>
+                                        </span>
                                         <small class="text-muted">User</small>
                                     </div>
                                 </div>
@@ -54,12 +56,11 @@
                             <div class="dropdown-divider"></div>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="index.php?x=profil">
                                 <i class="bx bx-user me-2"></i>
                                 <span class="align-middle">My Profile</span>
                             </a>
                         </li>
-
                         <li>
                             <div class="dropdown-divider"></div>
                         </li>
@@ -69,6 +70,7 @@
                                 <span class="align-middle">Log Out</span>
                             </a>
                         </li>
+
                     </ul>
                 </li>
                 <!--/ User -->

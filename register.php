@@ -34,21 +34,59 @@
 <body>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <?php
   if (isset($_GET['status']) && $_GET['status'] == "gagal") { ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-
       Swal.fire({
         title: "Gagal",
         text: "Email atau Password salah",
         icon: "error"
       }).then((result) => {
-
+        window.location.href = 'register.php';
       });
 
     </script>
+
+  <?php } else if (isset($_GET['status']) && $_GET['status'] == "nohp_used") { ?>
+
+      <script>
+        Swal.fire({
+          title: "Gagal",
+          text: "No HP telah digunakan",
+          icon: "warning"
+        }).then((result) => {
+          window.location.href = 'register.php';
+        });
+
+      </script>
+
+  <?php } else if (isset($_GET['status']) && $_GET['status'] == "email_used") { ?>
+
+        <script>
+          Swal.fire({
+            title: "Gagal",
+            text: "Email telah digunakan",
+            icon: "warning"
+          }).then((result) => {
+            window.location.href = 'register.php';
+          });
+
+        </script>
+
+  <?php } else if (isset($_GET['status']) && $_GET['status'] == "pass_notsame") { ?>
+
+          <script>
+            Swal.fire({
+              title: "Gagal",
+              text: "Password tidak sama",
+              icon: "warning"
+            }).then((result) => {
+              window.location.href = 'register.php';
+            });
+
+          </script>
 
   <?php }
   ?>
@@ -101,7 +139,8 @@
 
                 </div>
                 <div class="input-group input-group-merge">
-                  <input onkeypress="samakan_password()" type="password" id="password1" class="form-control" name="password1"
+                  <input onkeypress="samakan_password()" type="password" id="password1" class="form-control"
+                    name="password1"
                     placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                     aria-describedby="password1" required />
                   <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
@@ -111,10 +150,9 @@
               <div class="mb-3 form-password-toggle">
                 <div class="d-flex justify-content-between">
                   <label class="form-label" for="password2">Ulangi Password</label>
-
                 </div>
                 <div class="input-group input-group-merge">
-                  <input  onkeypress="samakan_password()" type="password" id="password2" class="form-control" name="password2"
+                  <input type="password" id="password2" class="form-control" name="password2"
                     placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                     aria-describedby="password2" required />
                   <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
@@ -123,30 +161,11 @@
 
 
               <div class="mb-3">
-                <input type="submit" id="tombol_submit" class="d-none">
-                <a class="btn btn-primary d-grid w-100" href="#" onclick="login()">Register</a>
+                <button type="submit" class="btn btn-primary d-grid w-100">Register</button>
               </div>
             </form>
 
-            <script>
-              function login() {
-                document.getElementById('tombol_submit').click();
-                
 
-                let pass1 = document.getElementById('password1').value;
-                let pass2 = document.getElementById('password2').value;
-              }
-
-              function samakan_password(){
-                let pass1 = document.getElementById('password1').value;
-                let pass2 = document.getElementById('password2').value;
-
-                document.getElementById('tombol_submit').disabled = true;
-                if(pass1 != pass2){
-                }
-
-              }
-            </script>
 
             <p class="text-center">
               <span>Sudah punya akun?</span>

@@ -57,49 +57,7 @@
         <div class="layout-container">
 
             <!-- SIDEBAR -->
-            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                <div class="app-brand demo">
-                    <a href="index.html" class="app-brand-link">
-                        <span class="app-brand-logo demo">
-                            <img src="images/logo.png"
-                                style="width:40px;height:40px;  aspect-ratio:1/1; object-fit:cover;" alt="">
-                        </span>
-                        <span class="app-brand-text demo menu-text fw-bolder ms-2">Parzival</span>
-                    </a>
-
-                    <a href="javascript:void(0);"
-                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                    </a>
-                </div>
-
-                <div class="menu-inner-shadow"></div>
-
-                <ul class="menu-inner py-1">
-                    <!-- Dashboard -->
-                    <li class="menu-item active">
-                        <a href="index.php" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="pencarian.php" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-search"></i>
-                            <div data-i18n="Analytics">Cari Pesanan</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="riwayat.php" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-history"></i>
-                            <div data-i18n="Analytics">Riwayat</div>
-                        </a>
-                    </li>
-
-
-
-                </ul>
-            </aside>
+            <?php include 'sidebar.php'; ?>
             <!-- / SIDEBAR -->
 
             <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
@@ -114,39 +72,45 @@
                 <!-- CONTENT -->
                 <div class="content-wrapper">
 
+
+                    <?php
+                    $id = $_GET['id'];
+                    $kueri = mysqli_query($conn, "SELECT * FROM product WHERE id_product = $id");
+                    $row = mysqli_fetch_array($kueri);
+                    ?>
+
                     <!-- ISI CONTENT -->
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <div class="row">
-
-
 
                             <!-- CARD -->
                             <div class="card p-3">
                                 <div class="row">
                                     <!-- LEFT -->
                                     <div class="col-4">
-                                        <div class="card">
-                                            <div class="col-12">
-                                                <a href="product-detail.php?1" class="card-link">
-                                                    <div class="card mb-3">
-                                                        <div class="row g-0">
-                                                            <div class="col-md-4">
-                                                                <img class="card-img card-img-left"
-                                                                    style="width: 100%; height: 100%; object-fit: cover;"
-                                                                    src="images/product-images/ml.png" alt="Card image">
-                                                            </div>
-                                                            <div class="col-md-8">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">
-                                                                        Mobile Legends </h5>
-                                                                    <p class="card-text"><small class="text-muted">
-                                                                            Diamonds </small></p>
-                                                                </div>
+                                        <div class="col-12">
+                                            <a href="#" class="card-link">
+                                                <div class="card mb-3">
+                                                    <div class="row g-0">
+                                                        <div class="col-md-4">
+                                                            <img class="card-img card-img-left"
+                                                                style="width: 100%; height: 100%; object-fit: cover;"
+                                                                src="images/product-images/<?php echo $row['gambar']; ?>"
+                                                                alt="Card image">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">
+                                                                    <?php echo $row['nama_product']; ?>
+                                                                </h5>
+                                                                <p class="card-text"><small class="text-muted">
+                                                                        <?php echo $row['tipe']; ?>
+                                                                    </small></p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <!-- LEFT -->
@@ -176,32 +140,32 @@
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <!-- ITEM KATEGORI -->
-                                                            <div class="col-3 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Kategori</button>
                                                             </div>
                                                             <!-- ITEM KATEGORI -->
                                                             <!-- ITEM KATEGORI -->
-                                                            <div class="col-3 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Kategori</button>
                                                             </div>
                                                             <!-- ITEM KATEGORI -->
                                                             <!-- ITEM KATEGORI -->
-                                                            <div class="col-3 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Kategori</button>
                                                             </div>
                                                             <!-- ITEM KATEGORI -->
                                                             <!-- ITEM KATEGORI -->
-                                                            <div class="col-3 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Kategori</button>
                                                             </div>
                                                             <!-- ITEM KATEGORI -->
                                                             <!-- ITEM KATEGORI -->
-                                                            <div class="col-3 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Kategori</button>
                                                             </div>
                                                             <!-- ITEM KATEGORI -->
                                                             <!-- ITEM KATEGORI -->
-                                                            <div class="col-3 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Kategori</button>
                                                             </div>
                                                             <!-- ITEM KATEGORI -->
@@ -217,26 +181,26 @@
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <!-- ITEM LAYANAN -->
-                                                            <div class="col-4 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Layanan</button>
                                                             </div>
                                                             <!-- ITEM LAYANAN -->
                                                             <!-- ITEM LAYANAN -->
-                                                            <div class="col-4 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Layanan</button>
                                                             </div>
                                                             <!-- ITEM LAYANAN -->
                                                             <!-- ITEM LAYANAN -->
-                                                            <div class="col-4 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Layanan</button>
                                                             </div>
                                                             <!-- ITEM LAYANAN -->
                                                             <!-- ITEM LAYANAN -->
-                                                            <div class="col-4 my-1">
+                                                            <div class="col my-1">
                                                                 <button class="btn btn-primary w-100">Layanan</button>
                                                             </div>
                                                             <!-- ITEM LAYANAN -->
-                                                       
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -251,15 +215,13 @@
                                                             <!-- ITEM PEMBAYARAN -->
                                                             <div class="col-12 my-1 ">
                                                                 <button class="btn btn-primary w-100 text-start">
-                                                                    <div class="row">
-                                                                        <div class="col-2">
-                                                                            <div class="card">
-                                                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/2560px-Logo_dana_blue.svg.png"
-                                                                                    style="height:100%; width:10vh;"
-                                                                                    class="m-2" alt="">
-                                                                            </div>
+                                                                    <div class="d-flex">
+                                                                        <div class="card">
+                                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/2560px-Logo_dana_blue.svg.png"
+                                                                                style="height:100%; width:10vh;"
+                                                                                class="m-2" alt="">
                                                                         </div>
-                                                                        <div class="col mt-1">
+                                                                        <div class="m-2">
                                                                             <span>Pembayaran</span>
                                                                         </div>
                                                                     </div>
