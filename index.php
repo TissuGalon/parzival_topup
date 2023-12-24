@@ -42,11 +42,86 @@
     <script src="assets/vendor/js/helpers.js"></script>
     <script src="assets/js/config.js"></script>
 
-    <!-- CUSTOM CSS -->
+    <!-- CSS CUSTOM -->
     <style>
+        /* SHIMMER SKELETON */
+        // Codepen presentation
+        .container {
+            margin-top: 4em;
+            margin-bottom: 4em;
+        }
 
+        // Bootstrap Loading Skeleton
+        %loading-skeleton {
+            color: transparent;
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #eee;
+            border-color: #eee;
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+
+        @keyframes loading-skeleton {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .loading-skeleton {
+            pointer-events: none;
+            animation: loading-skeleton 1s infinite alternate;
+
+            img {
+                filter: grayscale(100) contrast(0%) brightness(1.8);
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            li,
+            .btn,
+            label,
+            .form-control {
+                @extend %loading-skeleton;
+            }
+        }
+
+        /* SHIMMER SKELETON */
+
+
+        .ellipsis {
+            white-space: nowrap;
+            /* Prevents wrapping to the next line */
+            overflow: hidden;
+            /* Hides any content that overflows the container */
+            text-overflow: ellipsis;
+            /* Display an ellipsis (...) to indicate truncated text */
+            max-width: 150px;
+            /* Set a maximum width for the container */
+        }
+
+
+
+        /* Hover effect */
+        .cool-card:hover {
+            transition: transform 0.3s, background-color 0.3s;
+            transform: scale(1.1);
+            background-color: rgba(105, 108, 255, 0.16) !important;
+            cursor: pointer;
+        }
     </style>
-    <!-- CUSTOM CSS -->
+    <!-- CSS CUSTOM -->
 </head>
 
 <body>

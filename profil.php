@@ -24,11 +24,23 @@
 
                         <div class="row">
                             <div class="col text-center m-2">
-                                <div class="col-12"><br></div>
+                                <div class="col-12"></div>
                                 <div class="col-12">
-                                    <img class="rounded mb-0" src="images/muhammad_khollis.jpeg"
-                                        style="aspect-ratio:1/1; object-fit:cover; width:100%; height:auto;" alt="">
-                                    <a href="#" class="btn btn-warning w-100"> Update Foto pRofil</a>
+                                    <a href="proses/hapus_foto_profil.php" class="btn btn-danger w-100 mb-1">Hapus
+                                        Foto</a>
+
+                                    <img class="rounded mb-0" src="images/user-images/<?php if ($row['foto'] != null || $row['foto'] != '') {
+                                        echo $row['foto'];
+                                    } else {
+                                        echo 'default_avatar.jpg';
+                                    } ?>" style="aspect-ratio:1/1; object-fit:cover; width:100%; height:auto;" alt="">
+
+                                    <form action="proses/update_foto_profil.php" method="POST"
+                                        enctype="multipart/form-data">
+                                        <input type="file" class="form-control mt-1" name="file_upload" required>
+                                        <input type="submit" value="Update Foto profil"
+                                            class="btn btn-warning w-100 mt-1"></input>
+                                    </form>
                                 </div>
                                 <div class="col-12"><br></div>
 

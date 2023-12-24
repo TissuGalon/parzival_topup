@@ -70,55 +70,43 @@
                 <!-- TITLE LAYANAN -->
                 <div class="row m-2">
                     <div class="col-12">
-                        <h4> <i class="bx bx-grid-alt m-1"></i> Top Product</h4>
+                        <h4> <i class="bx bx-grid-alt m-1"></i> Layanan Kami</h4>
                     </div>
                 </div>
-                <!-- TITLE TOP -->
+                <!-- TITLE LAYANAN -->
 
-                <!-- TOP -->
+                <!-- LAYANAN -->
                 <div class="col-lg-12 col-md-12 col-12 order-1">
                     <div class="row">
                         <?php
-                        $topproduct = mysqli_query($conn, "SELECT * FROM product");
-                        while ($row1 = mysqli_fetch_array($topproduct)) { ?>
-                            <!-- ITEM TOP -->
+                        $qlayanan = mysqli_query($conn, "SELECT * FROM product");
+                        while ($row1 = mysqli_fetch_array($qlayanan)) { ?>
+                            <!-- ITEM LAYANAN -->
                             <div class="col-md-3 col-6">
-                                <a href="product-detail.php?id=<?php echo $row1['id_product'] ?>&api=<?php echo $row1['api_id'] ?>"
-                                    class="card-link">
-                                    <div class="card mb-3 cool-card">
+                                <a href="product-detail.php?id=<?php echo $row1['id_product'] ?>" class="card-link">
+                                    <div class="card mb-3">
                                         <div class="row g-0">
                                             <div class="col-md-4">
-                                                <img class="card-img " style="width: 100%; height: auto; object-fit: cover;"
+                                                <img class="card-img card-img-left"
+                                                    style="width: 100%; height: 100%; object-fit: cover;"
                                                     src="images/product-images/<?php echo $row1['gambar'] ?>"
                                                     alt="Card image">
                                             </div>
                                             <div class="col-md-8">
-                                                <div class="card-body p-0">
-                                                    <div class="row ms-2">
-                                                        <div class="col-12">
-                                                            <br>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <h5 class="card-title ellipsis">
-                                                                <?php echo $row1['nama_product'] ?>
-                                                            </h5>
-                                                            <h6 class="card-text text-primary ellipsis"><small
-                                                                    class="text-muted">
-                                                                    <?php echo $row1['tipe'] ?>
-                                                                </small></h6>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <br>
-                                                        </div>
-                                                    </div>
-
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <?php echo $row1['nama_product'] ?>
+                                                    </h5>
+                                                    <p class="card-text"><small class="text-muted">
+                                                            <?php echo $row1['tipe'] ?>
+                                                        </small></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <!-- ITEM TOP -->
+                            <!-- ITEM LAYANAN -->
                         <?php } ?>
 
 
@@ -185,7 +173,7 @@
                             <div class="col-md-3 col-xl-2 col-6 itemtopup">
                                 <a href="#" class="card-link">
                                     <div class="card mb-3">
-                                        <img src="#" class="card-img-top" alt="...">
+                                        <img src="//placekitten.com/300/200" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">Loading Item ...</h5>
                                             <p class="card-text">Loading Detail ...</p>
@@ -230,14 +218,14 @@
 
                                 pricelist.forEach(item => {
                                     konten += `
-                                    <div class="col-md-3 col-xl-2 col-6 itemtopup ">
-                                        <a href="product-detail.php?id=${item.product_description}" class="card-link ">
+                                    <div class="col-md-3 col-xl-2 col-6 itemtopup">
+                                        <a href="product-detail.php?id=${item.product_description}" class="card-link">
                                             <div class="card mb-3">
-                                                <img class="card-img-top" src="${item.icon_url}"  onerror="this.onerror=null; this.src='images/image-blank.jpg';" alt="Card image cap" style="width: 100%; height: auto; aspect-ratio:1/1; image-fit:cover;">
+                                                <img class="card-img-top" src="${item.icon_url}" alt="Card image cap" style="width: 100%; height: 100%;">
                                                 <div class="card-body">
                                                     <div class="text-center">
-                                                        <h5 class="card-title ellipsis" id="itemtopup">${item.product_description}</h5>
-                                                        <p class="card-text ellipsis"><small class="text-muted">${item.product_nominal}</small></p>
+                                                        <h5 class="card-title" id="itemtopup">${item.product_description}</h5>
+                                                        <p class="card-text"><small class="text-muted">${item.product_nominal}</small></p>
                                                     </div>
                                                 </div>
                                             </div>

@@ -12,11 +12,11 @@
             <!-- DIVIDER -->
             <div class="row">
                 <div class="col-6">
-                    <h4 class="fw-bold py-3 mb-4">DATA PRODUK LOCAL</h4>
+                    <h4 class="fw-bold py-3 mb-4">DATA AKUN USER</h4>
                 </div>
                 <div class="col-6 text-end">
                     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Data /</span>
-                        Produk</h4>
+                        Akun</h4>
                 </div>
             </div>
             <!-- DIVIDER -->
@@ -25,45 +25,45 @@
             <div class="card">
                 <div class="card-body">
 
-                    <button data-bs-toggle="modal" data-bs-target="#modaltambah" class="btn btn-primary mb-1"><i
+                    <!--   <button data-bs-toggle="modal" data-bs-target="#modaltambah" class="btn btn-primary mb-1"><i
                             class="menu-icon tf-icons bx bx-plus"></i>
-                        Tambah Data</button>
+                        Tambah Data</button> -->
                     <!--    <button class="btn btn-success mb-1"><i class='bx bxs-file-import'></i>
                                     Import</button> -->
                     <hr>
                     <div class="table-responsive">
                         <table class="table table-bordered display py-4" id="example" width="100%" cellspacing="0">
-                            <thead>
+                            <thead class="text-center">
                                 <tr>
                                     <th>#</th>
                                     <th>ID</th>
+                                    <th>Username</th>
                                     <th>Nama</th>
-                                    <th>Tipe</th>
-                                    <th>Jenis</th>
-                                    <th>Gambar</th>
-                                    <th>API ID</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Email</th>
+                                    <th>No HP</th>
+                                    <th>Level</th>
+                                    <th>Foto</th>
+                                    <!--       <th>Action</th> -->
                                 </tr>
                             </thead>
-                            <tfoot>
+                            <tfoot class="text-center">
                                 <tr>
                                     <th>#</th>
                                     <th>ID</th>
+                                    <th>Username</th>
                                     <th>Nama</th>
-                                    <th>Tipe</th>
-                                    <th>Jenis</th>
-                                    <th>Gambar</th>
-                                    <th>API ID</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Email</th>
+                                    <th>No HP</th>
+                                    <th>Level</th>
+                                    <th>Foto</th>
+                                    <!--  <th>Action</th> -->
                                 </tr>
                             </tfoot>
                             <tbody>
 
                                 <?php
                                 $no = 1;
-                                $query = mysqli_query($conn, "SELECT * FROM product");
+                                $query = mysqli_query($conn, "SELECT * FROM akun");
                                 while ($row = mysqli_fetch_array($query)) {
                                     ?>
                                     <tr id="item<?php echo $no; ?>">
@@ -71,30 +71,28 @@
                                             <?php echo $no; ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['id_product'] ?>
+                                            <?php echo $row['id_akun'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['nama_product'] ?>
+                                            <?php echo $row['username'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['tipe'] ?>
+                                            <?php echo $row['nama_lengkap'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['jenis'] ?>
+                                            <?php echo $row['email'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['gambar'] ?>
+                                            <?php echo $row['nohp'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['api_id'] ?>
+                                            <?php echo $row['level'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['status'] ?>
+                                            <?php echo $row['foto'] ?>
                                         </td>
-                                        <td>
-                                            <button
-                                                onclick="edit_item(<?php echo $row['id_product'] ?>,'<?php echo $row['nama_product'] ?>','<?php echo $row['tipe'] ?>','<?php echo $row['jenis'] ?>','<?php echo $row['api_id'] ?>','<?php echo $row['status'] ?>')"
-                                                data-bs-toggle="modal" data-bs-target="#modaledit"
+                                        <!--   <td>
+                                              <button onclick="edit_item()" data-bs-toggle="modal" data-bs-target="#modaledit"
                                                 class="btn btn-sm btn-warning">
                                                 <i class="menu-icon tf-icons bx bx-pencil"></i>
                                             </button>
@@ -103,7 +101,7 @@
                                                 onclick="hapus_item(document.getElementById('item<?php echo $no; ?>'))"
                                                 class="btn btn-sm btn-danger"><i
                                                     class="menu-icon tf-icons bx bx-trash"></i></button>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     <?php
                                     $no++;

@@ -67,10 +67,10 @@
                 include 'home.php';
             } else if ($_GET['x'] == 'local') {
                 include 'local.php';
-            } else if ($_GET['x'] == 'api1') {
-                include 'api1.php';
             } else if ($_GET['x'] == 'api') {
                 include 'api.php';
+            } else if ($_GET['x'] == 'akun') {
+                include 'akun.php';
             } else {
                 include 'home.php';
             }

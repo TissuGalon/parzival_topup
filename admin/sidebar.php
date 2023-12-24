@@ -33,20 +33,22 @@
                 <div data-i18n="Analytics">Data Produk Local</div>
             </a>
         </li>
-        <li class="menu-item <?php if (isset($_GET['x']) && $_GET['x'] == 'api1') {
-            echo 'active';
-        } ?>">
-            <a href="index.php?x=api1" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="Analytics">Data API IAK</div>
-            </a>
-        </li>
+
         <li class="menu-item <?php if (isset($_GET['x']) && $_GET['x'] == 'api') {
             echo 'active';
         } ?>">
             <a href="index.php?x=api" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
                 <div data-i18n="Analytics">Data Produk API</div>
+            </a>
+        </li>
+
+        <li class="menu-item <?php if (isset($_GET['x']) && $_GET['x'] == 'akun') {
+            echo 'active';
+        } ?>">
+            <a href="index.php?x=akun" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Analytics">Data Akun User</div>
             </a>
         </li>
 

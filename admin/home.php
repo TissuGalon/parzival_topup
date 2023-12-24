@@ -11,19 +11,44 @@
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
 
+                <?php
+                $kueri1 = mysqli_query($conn, "SELECT * FROM akun");
+                $cek1 = mysqli_num_rows($kueri1);
+                $kueri2 = mysqli_query($conn, "SELECT * FROM product");
+                $cek2 = mysqli_num_rows($kueri2);
 
+                ?>
 
                 <!-- LAYANAN -->
                 <div class="col-lg-12 col-md-4 order-1">
                     <div class="row">
                         <!-- ITEM LAYANAN -->
                         <div class="col-md-4 col-6">
-                            <a href="#" class="card-link">
+                            <a href="index.php?x=local" class="card-link">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <i class="bx bx-box"></i>
+                                            <h5 class="ms-2">
+                                                <?php echo $cek2; ?> Product
+                                            </h5>
+                                        </div>
+                                        <h4>Jumlah Product</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- ITEM LAYANAN -->
+                        <!-- ITEM LAYANAN -->
+                        <div class="col-md-4 col-6">
+                            <a href="index.php?x=akun" class="card-link">
                                 <div class="card mb-3">
                                     <div class="card-body">
                                         <div class="d-flex">
                                             <i class="bx bx-user"></i>
-                                            <h4>250 User</h4>
+                                            <h5 class="ms-2">
+                                                <?php echo $cek1; ?> User
+                                            </h5>
                                         </div>
                                         <h4>Jumlah Akun User</h4>
                                     </div>

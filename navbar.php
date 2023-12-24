@@ -24,11 +24,22 @@
         <?php } else { ?>
 
             <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+                <?php
+                $id = $_SESSION['id_akun'];
+                $pp = mysqli_query($conn, "SELECT * FROM akun WHERE id_akun = '$id'");
+                $ppp = mysqli_fetch_array($pp);
+                ?>
+
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                         <div class="avatar avatar-online">
-                            <img src="images/muhammad_khollis.jpeg" style="aspect-ratio:1/1; object-fit:cover;" alt
+                            <img src="images/user-images/<?php if ($ppp['foto'] != null || $ppp['foto'] != '') {
+                                echo $ppp['foto'];
+                            } else {
+                                echo 'default_avatar.jpg';
+                            } ?>" style="aspect-ratio:1/1; object-fit:cover;" alt
                                 class="w-px-40 h-auto rounded-circle" />
                         </div>
                     </a>
@@ -38,9 +49,14 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 me-3">
                                         <div class="avatar avatar-online">
-                                            <img src="images/muhammad_khollis.jpeg"
-                                                style="aspect-ratio:1/1; object-fit:cover;" alt
+
+                                            <img src="images/user-images/<?php if ($ppp['foto'] != null || $ppp['foto'] != '') {
+                                                echo $ppp['foto'];
+                                            } else {
+                                                echo 'default_avatar.jpg';
+                                            } ?>" style="aspect-ratio:1/1; object-fit:cover;" alt
                                                 class="w-px-40 h-auto rounded-circle" />
+
                                         </div>
                                     </div>
                                     <div class="flex-grow-1">

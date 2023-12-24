@@ -1,0 +1,19 @@
+<?php
+include 'koneksi.php';
+
+$id = $_SESSION['id_akun'];
+
+/* Hapus foto sebelumnya */
+$q = mysqli_query($conn, "SELECT * FROM akun WHERE id_akun = $id");
+$row = mysqli_fetch_array($q);
+if ($row['foto'] != null || $row['foto'] != '') {
+    $file_path = '../images/user-images/';
+    if (file_exists($file_path . $row['foto'])) {
+        unlink($file_path . $row['foto']);
+    }
+}
+
+$query = mysqli_query($conn, "UPDATE akun SET foto = NULL WHERE id_akun = $id");
+header("location:../index.php?x=profil&status=dihapus");
+
+?>

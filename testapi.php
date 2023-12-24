@@ -11,11 +11,11 @@
 <body>
     <script>
         async function getData() {
-            const url = 'https://prepaid.iak.dev/api/pricelist';
+            const url = 'https://prepaid.iak.dev/api/pricelist/game/Arena of Valor/';
             const options = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: '{"username":"085161787501","sign":"1eeffa87e868d58e7d28a742282cfb93","status":"all"}'
+                body: '{"username":"085161787501","sign":"1eeffa87e868d58e7d28a742282cfb93","status":"active"}'
             };
 
             try {
@@ -23,7 +23,7 @@
                 const data = await response.json();
                 console.log(data);
 
-                let StringData = JSON.stringify(data['data']['pricelist']);
+                let StringData = JSON.stringify(data['data']);
                 document.getElementById('tampil').innerHTML = StringData;
             } catch (error) {
                 console.error(error);
